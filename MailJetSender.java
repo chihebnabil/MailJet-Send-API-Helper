@@ -1,5 +1,3 @@
-package main;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -85,10 +83,10 @@ public class MailJetSender {
 		String mime = Files.probeContentType(Paths.get(filename));
 		
 		files.put(new JSONObject()
-        .put("Content-type",mime )
-        .put("Filename", "test.pdf")
-        .put("content",result)
-        );
+                      .put("Content-type",mime )
+                      .put("Filename", "test.pdf")
+                      .put("content",result)
+                );
 		
 		
 		sendV3("titre" ,"object - sendToManyV3" ,"text" , null ,to ,files );
